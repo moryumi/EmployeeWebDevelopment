@@ -8,8 +8,7 @@ function App() {
   return (
     <div className="container">
      
-        
-        <Navbar title="Sayfaya hosgeldiniz" />
+        <Navbar title="Welcome to Personel System" />
         <hr></hr>
        <User 
            name="Irem Isik" 
@@ -21,38 +20,24 @@ function App() {
           department="IT"
           salary="7000 TL"
        />
+
+      <User
+          name="Cigdem Akbulut" 
+          department="Finance"
+          salary="10.000 TL"
+       />
+
        <User
-          name="Yigit Er" 
-          department="IT"
-          salary="7000 TL"
+          name="Busra Karausta" 
+          department="Product"
+          salary="3.250 TL"
        />
        <User
-          name="Yigit Er" 
+          name="Berati Capaal" 
           department="IT"
-          salary="7000 TL"
+          salary="15.000 TL"
        />
-       <User
-          name="Yigit Er" 
-          department="IT"
-          salary="7000 TL"
-       />
-       <User
-          name="Yigit Er" 
-          department="IT"
-          salary="7000 TL"
-       />
-       <User
-          name="Yigit Er" 
-          department="IT"
-          salary="7000 TL"
-       />
-       <User
-          name="Yigit Er" 
-          department="IT"
-          salary="7000 TL"
-       />
-     
-     
+      
     </div>
   );
 }
