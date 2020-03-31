@@ -3,7 +3,7 @@ import React, { Component } from 'react'
  class User extends Component {
     state={
         isVisible:false,
-        isDeleted:false
+       // isDeleted:false
     }
 
  /*    onClickEvent=(e)=>{
@@ -14,7 +14,7 @@ import React, { Component } from 'react'
             }
                 
           )
-    } */
+    } 
 
     deleteComponent(){
  
@@ -25,6 +25,7 @@ import React, { Component } from 'react'
         )
         console.log("delete")
     }
+    */
 
     openComponent(){
         this.setState(
@@ -32,11 +33,18 @@ import React, { Component } from 'react'
                 isVisible: !this.state.isVisible
                
             }    
-          )
-        
+          ) 
     }
-  
+    
+
+    onDeletePersonel=(e)=>{
+        const{id,deletePersonel}=this.props;
+        deletePersonel(id);
+    }
+
     render() {
+        const{name,department,salary}=this.props;
+
         return (
             <div className="col-md-8 mb-4">
                { this.state.isDeleted  ? null :
@@ -44,7 +52,7 @@ import React, { Component } from 'react'
                     <div className="card-header d-flex justify-content-between">
                         <h4 className="d-inline" style={{cursor:"pointer"}} >  {this.props.name} <i className="fas fa-chevron-down" onClick={this.openComponent.bind(this)}></i></h4> 
                        
-                        <i className="far fa-trash-alt"  style={{cursor: "pointer"}} onClick={this.deleteComponent.bind(this)}   ></i>
+                        <i className="far fa-trash-alt"  style={{cursor: "pointer"}} onClick={this.onDeletePersonel} ></i>
                     </div>
                    { 
                         this.state.isVisible ? <div className="card-body">
