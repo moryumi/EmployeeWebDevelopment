@@ -19,7 +19,6 @@ class Users extends Component {
                                                 name={user.name}
                                                 department={user.department}
                                                 salary={user.salary}
-                                                
                                             />
                                         )   
                                     })

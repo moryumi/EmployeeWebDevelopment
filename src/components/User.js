@@ -10,7 +10,7 @@ import UserConsumer from '../context'
    onClickEvent=(e)=>{
         this.setState(
             {
-                    isVisible: !this.state.isVisible,
+                    isVisible: !this.state.isVisible
             }
                 
           )
@@ -34,7 +34,7 @@ import UserConsumer from '../context'
                         <div className="col-md-8 mb-4">
                            { 
                              <div className="card bg-light mb-3" >
-                                <div className="card-header d-flex justify-content-between">
+                                <div className="card-header d-flex justify-content-between" style={this.state.isVisible? {backgroundColor:"#4c4f6a", color:"#f0f6f7"} : null}>
                                     <h4 className="d-inline" style={{cursor:"pointer"}} >  {this.props.name} <i className="fas fa-chevron-down" onClick={this.onClickEvent}></i></h4> 
                                    
                                     <i className="far fa-trash-alt" onClick={this.onDeletePersonel.bind(this,dispatch)} style={{cursor: "pointer"}}  ></i>

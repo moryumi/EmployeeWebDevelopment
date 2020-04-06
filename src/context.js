@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 const UserContext=React.createContext();
+
 const reducer=(state,action)=>{
     switch(action.type){
         case "DELETE_USER":
@@ -9,8 +10,6 @@ const reducer=(state,action)=>{
                 users: state.users.filter(user=> action.payload !== user.id)
             }
     }
-    
-
 }
 
 export class UserProvider extends Component {
