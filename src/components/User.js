@@ -4,16 +4,15 @@ import UserConsumer from '../context'
 
  class User extends Component {
     state={
-         isVisible:false,
-     }
+        isVisible:false,
+    }
 
-   onClickEvent=(e)=>{
+    onClickEvent=(e)=>{
         this.setState(
             {
-                    isVisible: !this.state.isVisible
-            }
-                
-          )
+                isVisible: !this.state.isVisible
+            }  
+        )
     } 
 
     onDeletePersonel=(dispatch,e)=>{
@@ -23,7 +22,6 @@ import UserConsumer from '../context'
     }
 
     render() {
-      
         const{name,department,salary}=this.props;
         return(
             <UserConsumer>
@@ -33,7 +31,7 @@ import UserConsumer from '../context'
                     return (
                         <div className="col-md-8 mb-4">
                            { 
-                             <div className="card bg-light mb-3" >
+                            <div className="card bg-light mb-3" >
                                 <div className="card-header d-flex justify-content-between" style={this.state.isVisible? {backgroundColor:"#4c4f6a", color:"#f0f6f7"} : null}>
                                     <h4 className="d-inline" style={{cursor:"pointer"}} >  {this.props.name} <i className="fas fa-chevron-down" onClick={this.onClickEvent}></i></h4> 
                                    
@@ -41,22 +39,18 @@ import UserConsumer from '../context'
                                 </div>
                                { 
                                    this.state.isVisible ? <div className="card-body">
-                                    <p className="card-text"> Salary: {this.props.salary} </p> 
+                                    <p className="card-text"> Salary: {this.props.salary} TL</p> 
                                     <p className="card-text"> Department: {this.props.department}  </p>              
                                 </div> : null
                             }
-                             </div>
+                            </div>
                             }
-                           
                         </div>
                     )
                 }
             }
             </UserConsumer>
-    
         )  
-        
-      
     }
 }
 export default User;

@@ -14,7 +14,7 @@ class Users extends Component {
                                     users.map(user=>{   
                                         return (
                                             <User 
-                                            
+                                                key={user.id}
                                                 id={user.id}
                                                 name={user.name}
                                                 department={user.department}

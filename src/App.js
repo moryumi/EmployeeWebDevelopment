@@ -8,8 +8,6 @@ import AddUser from "./components/AddUser";
 
 class App extends Component {
 
-
-
    render() {
       return (
          <div className="container">
@@ -18,7 +16,6 @@ class App extends Component {
              <hr></hr>
              <AddUser />
              <Users/>
-            
          </div>
        );
    }
