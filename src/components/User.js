@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import axios from 'axios';
 import UserConsumer from '../context'
 
  class User extends Component {
@@ -15,12 +15,19 @@ import UserConsumer from '../context'
         )
     } 
 
-    onDeletePersonel=(dispatch,e)=>{
+    onDeletePersonel=async(dispatch,e)=>{
         const {id}= this.props;
+        console.log(id);
+        await axios.delete('http://localhost:3004/users/'+ id); 
+        
         //dispatch
         dispatch({type:"DELETE_USER",payload:id});
     }
 
+    componentWillUnmount() {
+        console.log("delete");
+    }
+    
     render() {
         const{name,department,salary}=this.props;
         return(

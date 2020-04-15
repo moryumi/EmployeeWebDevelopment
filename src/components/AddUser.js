@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import posed from 'react-pose';
 import UserConsumer from '../context';
+import axios from 'axios';
+
 
 const Box=posed.div({
     visible: {
@@ -12,7 +14,7 @@ const Box=posed.div({
     }
 });
 
-var uniqid=require('uniqid');
+//var uniqid=require('uniqid');
 
 class AddUser extends Component {
 
@@ -28,7 +30,7 @@ class AddUser extends Component {
         })
     }
 
-    addUser=(dispatch,e)=>{
+    addUser=async(dispatch,e)=>{
        
         e.preventDefault();
         console.log("basti");
@@ -37,10 +39,10 @@ class AddUser extends Component {
             name:name,
             department:department,
             salary:salary,
-            id:uniqid()
+            //id:uniqid()
         }
-        
-       dispatch({type:"ADD_USER",payload:newUser});
+        const response= await axios.post("http://localhost:3004/users",newUser);
+       dispatch({type:"ADD_USER",payload:response.data});
     }
 
     state={
