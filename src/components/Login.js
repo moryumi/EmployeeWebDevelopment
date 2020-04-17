@@ -1,17 +1,13 @@
 import React, { Component } from 'react'
 
 class Login extends Component {
-    
     render() {
         return (
             <div className="container h-100">
             <div className="d-flex justify-content-center h-100">
                 <div className="user_card">
-                    <div className="d-flex justify-content-center">
-                        <div className="brand_logo_container">
-                            
-                        </div>
-                    </div>
+                <img className="logo" src={require("../images/logo.jpeg")} alt="logo"/>
+                    
                     <div className="d-flex justify-content-center form_container">
                         <form>
                             <div className="input-group mb-3">

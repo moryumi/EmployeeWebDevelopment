@@ -1,6 +1,9 @@
-.myStyle{
-  font-family: Arial;
-  text-align: center;
+.logo{
+  width: 20%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom:2%;
+  display: block;
 }
 
 .App {
