@@ -1,0 +1,12 @@
+.slide-container{
+    width: 100%;
+    margin: auto;
+    padding-top: 3%;
+}
+
+.slide-container img{
+    height: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}

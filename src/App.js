@@ -8,6 +8,7 @@ import Login from "./components/Login";
 import Contact from "./components/Contact";
 import About from "./components/About";
 import Home from "./components/Home";
+import "./text.css"
 import {BrowserRouter as Router, Route,Switch} from "react-router-dom";
 
 class App extends Component {
