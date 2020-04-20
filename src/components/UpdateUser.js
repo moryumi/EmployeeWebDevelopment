@@ -5,9 +5,22 @@ import axios from 'axios';
 
 class AddUser extends Component {
 
-    updateUser=async()=>{
+    updateUser=async(dispatch,e)=>{
         //update
+        e.preventDefault();
+        const{id}=this.props.match.params;
+        const{name,department,salary}=this.state;
+        const updatedUser={
+            name,
+            department,
+            salary
+        }
+     
+        const response= await axios.put(`http://localhost:3004/users/${id}`,updatedUser)
+       
+        dispatch({type:"UPDATE_USER", payload: response.data});
         this.props.history.push("/users");
+        
     }
 
     changeInput=(e)=>{

@@ -3,7 +3,6 @@ import posed from 'react-pose';
 import UserConsumer from '../context';
 import axios from 'axios';
 
-
 const Box=posed.div({
     visible: {
         opacity:1,
@@ -42,7 +41,8 @@ class AddUser extends Component {
             //id:uniqid()
         }
         const response= await axios.post("http://localhost:3004/users",newUser);
-       dispatch({type:"ADD_USER",payload:response.data});
+        dispatch({type:"ADD_USER",payload:response.data});
+       // this.props.history.push("/users");
     }
 
     state={

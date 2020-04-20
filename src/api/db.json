@@ -1,10 +1,46 @@
 {
   "users": [
     {
-      "name": "rtwte",
-      "department": "Human Resources",
-      "salary": "2252",
+      "name": "Dilara Koc",
+      "department": "IT",
+      "salary": "3500",
       "id": 1
+    },
+    {
+      "name": "Mert Topal",
+      "department": "Human Resources",
+      "salary": "7000",
+      "id": 2
+    },
+    {
+      "name": "Hasan Demir",
+      "department": "Product",
+      "salary": "3750",
+      "id": 3
+    },
+    {
+      "name": "Ece Aydin",
+      "department": "Finance",
+      "salary": "3000",
+      "id": 4
+    },
+    {
+      "name": "Burak Kahyaoglu2",
+      "department": "IT",
+      "salary": "5000",
+      "id": 5
+    },
+    {
+      "name": "gsrrtts",
+      "department": "",
+      "salary": "",
+      "id": 6
+    },
+    {
+      "name": "",
+      "department": "",
+      "salary": "",
+      "id": 12
     }
   ]
 }
