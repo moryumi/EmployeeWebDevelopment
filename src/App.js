@@ -8,14 +8,16 @@ import Login from "./components/Login";
 import Contact from "./components/Contact";
 import About from "./components/About";
 import Home from "./components/Home";
-import "./text.css"
+import UpdateUser from "./components/UpdateUser";
 import {BrowserRouter as Router, Route,Switch} from "react-router-dom";
+import User from "./components/User";
 
 class App extends Component {
 
    render() {
       return (
          <Router>
+            
              <Navbar />
             <div className="container">
                <Switch>
@@ -23,8 +25,9 @@ class App extends Component {
                   <Route exact path="/about" component={About}/>
                   <Route exact path="/login" component={Login}/>
                   <Route exact path="/contact" component={Contact}/>
+                  <Route exact path="/updateUser/:id" component={UpdateUser}/>
 
-                  <Route exact path="/add" component={AddUser}/>
+                  <Route exact path="/addUser" component={AddUser}/>
                   <Route exact path="/users" component={Users}/>
                   
                   <Route component={NotFound}/>

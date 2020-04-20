@@ -1,22 +1,10 @@
 {
   "users": [
     {
-      "id": "id3",
-      "name": "Cigdem",
-      "department": "Finance",
-      "salary": "10000"
-    },
-    {
-      "id": "id5",
-      "name": "Berati",
-      "department": "IT",
-      "salary": "15000"
-    },
-    {
-      "name": "dgdfsg",
-      "department": "IT",
-      "salary": "5000",
-      "id": "PzH_KiQ"
+      "name": "rtwte",
+      "department": "Human Resources",
+      "salary": "2252",
+      "id": 1
     }
   ]
 }

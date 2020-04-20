@@ -1,27 +1,13 @@
 import React, { Component } from 'react'
-import posed from 'react-pose';
 import UserConsumer from '../context';
 import axios from 'axios';
 
 
-const Box=posed.div({
-    visible: {
-        opacity:1,
-        applyAtStart:{display:"block"}},
-    hidden: {
-        opacity:0,
-        applyAtEnd:{display:"none"}
-    }
-});
-
-//var uniqid=require('uniqid');
-
 class AddUser extends Component {
 
-    ChangeFormVisibility=(e)=>{
-        this.setState({
-            isVisible: !this.state.isVisible
-        })
+    updateUser=async()=>{
+        //update
+        this.props.history.push("/users");
     }
 
     changeInput=(e)=>{
@@ -30,30 +16,27 @@ class AddUser extends Component {
         })
     }
 
-    addUser=async(dispatch,e)=>{
-       
-        e.preventDefault();
-        console.log("basti");
-        const {name,department,salary}=this.state;
-        const newUser={
-            name:name,
-            department:department,
-            salary:salary,
-            //id:uniqid()
-        }
-        const response= await axios.post("http://localhost:3004/users",newUser);
-       dispatch({type:"ADD_USER",payload:response.data});
-    }
 
     state={
-        isVisible:false,
         name:"",
         department:"",
         salary:""
     }
 
+    componentDidMount=async()=> {
+        const{id}=this.props.match.params;
+        const response= await axios.get(`http://localhost:3004/users/${id}`);
+       // const{name,department,salary}=response.data;
+        this.setState({
+            name:response.data.name,
+            department:response.data.department,
+            salary:response.data.salary
+        })
+      
+    }
+    
     render() {
-        const{isVisible,name,department,salary}=this.state;
+        const{name,department,salary}=this.state;
         return (
              <UserConsumer>
                 { 
@@ -61,16 +44,14 @@ class AddUser extends Component {
                         const {dispatch}=value;
                         return(
                             <div className="container col-md-8 mb-4">
-                            <button onClick={this.ChangeFormVisibility} type="submit" className="btn btn-dark btn-lg btn-block mb-2" >{isVisible? "Hide Form": "Show Form"}</button>
-                                <Box className="box" pose={this.state.isVisible ? "visible": "hidden"}>
                                     <div className="card"  >
                                         <div className="card-header" > 
-                                                <h4> Add User </h4>
+                                                <h4>Update User </h4>
                                         </div>
 
                                         <div className="card-body" > 
 
-                                            <form onSubmit={this.addUser.bind(this,dispatch)} >
+                                            <form onSubmit={this.updateUser.bind(this,dispatch)} >
                                                 <div className="form-group" > 
                                                         <label htmlFor="name"> Name: </label>
                                                         <input type="text" name="name" id="name" placeholder="Enter name" className="form-control" value={name} onChange={this.changeInput}/>
@@ -98,12 +79,11 @@ class AddUser extends Component {
                                                         </div>           
                                                     </div>
                                                     
-                                                <button type="submit" className="btn btn-primary btn-lg btn-block">Add User</button>
+                                                <button type="submit" className="btn btn-primary btn-lg btn-block">Update User</button>
                                             </form>
                                             
                                         </div>
                                     </div>
-                                </Box>  
                             </div>
                         )
                         

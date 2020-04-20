@@ -4,20 +4,20 @@ import {Link} from "react-router-dom";
  function Navbar(props) {
     return (
         <div >
-            <nav className="navbar navbar-expand-lg bg-dark navbar-dark" >
+            <nav className="navbar navbar-expand-lg bg-dark navbar-dark mb-5 p-3" >
                 <div className="container ">
                     <ul className="navbar-nav col">
                         <li className="nav-item col-2">
-                            <a className="nav-link" href="/">Home</a>
+                            <Link to ="/" className="nav-link">Home</Link>
                         </li>
                         <li className="nav-item col-2 ">
-                            <a className="nav-link" href="/login">Login</a>
+                            <Link to ="/login" className="nav-link">Login</Link>
                         </li>
                         <li className="nav-item col-2">
-                            <a className="nav-link" href="/about">About</a>
+                            <Link to ="/about" className="nav-link">About</Link>
                         </li>
                         <li className="nav-item col-2">
-                            <a className="nav-link" href="/contact">Contact</a>
+                            <Link to ="/contact" className="nav-link">Contact</Link>
                         </li>
                     </ul>
                     <form className="form-inline " action="/action_page.php">

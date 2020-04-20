@@ -1,15 +1,20 @@
 import React, { Component } from 'react'
 import User from './User';
 import UserConsumer from '../context';
+import AddUser from './AddUser';
+import "../App.css"
 class Users extends Component {
 
     render() {
+        
         return (
+            
            <UserConsumer>
+               
                 {  value=>{
                         const{users}=value;
                         return(
-                            <div> {
+                            <div > <AddUser/>{
                                     users.map(user=>{   
                                         return (
                                             <User 
