@@ -25,7 +25,7 @@ class AddUser extends Component {
 
     changeInput=(e)=>{
         this.setState({
-            [e.target.name]:e.target.value
+            [e.target.name]:e.target.value  //burdaki name input degeri olan name:"password"
         })
     }
 

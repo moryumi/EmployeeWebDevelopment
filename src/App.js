@@ -11,6 +11,7 @@ import Home from "./components/Home";
 import UpdateUser from "./components/UpdateUser";
 import {BrowserRouter as Router, Route,Switch} from "react-router-dom";
 import User from "./components/User";
+import User2 from "./components/AddUser";
 
 class App extends Component {
 

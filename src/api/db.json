@@ -9,7 +9,7 @@
     {
       "name": "Mert Topal",
       "department": "Human Resources",
-      "salary": "7000",
+      "salary": "5500",
       "id": 2
     },
     {
@@ -35,12 +35,9 @@
       "department": "",
       "salary": "",
       "id": 6
-    },
-    {
-      "name": "",
-      "department": "",
-      "salary": "",
-      "id": 12
     }
   ]
+
 }
+
+
