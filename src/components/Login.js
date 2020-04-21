@@ -44,7 +44,7 @@ class Login extends Component {
             <div className="container h-100">
             <div className="d-flex justify-content-center h-100">
                 <div className="user_card">
-                <img className="logo mb-4" src={require("../images/logo.jpeg")} alt="logo"/>
+                <img className="logo mb-4 rounded" src={require("../images/logo.jpg")} alt="logo"/>
                     
                     <div className="d-flex justify-content-center form_container">
 
@@ -71,15 +71,18 @@ class Login extends Component {
                             
                             {isLogin ? null :<div class="alert alert-danger mb-4" role="alert">Wrong info. Please check it!</div> }
                             <div className="d-flex justify-content-center  login_container mb-3">
-                                <button type="submit" name="button" className="btn login_btn btn btn-success"> Login</button>
+                                <button type="submit" name="button" className="btn login_btn btn-block btn-primary"> Login</button>
                             </div>
                         </form>
                     </div>
             
                     <div >
                         <div className="d-flex justify-content-center links">
-                            Don't have an account? <Link to="/signUp" className="ml-2"> Sign Up</Link>
+                            Don't have an account? <Link to="/signup" className="ml-2"> Sign Up</Link>
                         </div>
+                        <br></br>
+                        <div className="d-flex justify-content-center links"><i>For test (<u>username: user1 password: 1234</u>).</i></div >
+                       
                         {/* <div className="d-flex justify-content-center links">
                             <a href="#">Forgot your password?</a>
                         </div> */}
